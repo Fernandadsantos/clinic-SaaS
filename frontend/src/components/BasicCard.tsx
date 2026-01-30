@@ -12,10 +12,10 @@ export default function BasicCard({ title, description, resources, typeIcon }: C
     const SelectedIcon = Icons[typeIcon];
 
     return (
-        <Card className='hover:shadow-lg transition-shadow  border-b border-green-400' sx={{ minWidth: 275, width: 300, height: 300 }}>
+        <Card className='hover:shadow-2xl transition-shadow  border-b border-green-400' sx={{ minWidth: 275, width: 400, height: 400 }}>
             <CardContent className='text-left'>
                 <div className='flex-col items-start space-y-5'>
-                    <Typography className='bg-green-500 h-12 w-12 rounded-3xl flex justify-center items-center'>
+                    <Typography className='h-12 w-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-4'>
                         <SelectedIcon width={34} height={34} color="primary" />
                     </Typography>
                     <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 24, fontWeight: 700 }}>
@@ -25,14 +25,16 @@ export default function BasicCard({ title, description, resources, typeIcon }: C
                 <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 18 }}>
                     {description}
                 </Typography>
-                <div className='mt-5'>
+                <div className='mt-5 '>
                     {
                         resources.map((text) => {
                             return (
-                                <Typography className='flex gap-1'>
-                                    <Icons.check />
-                                    {text}
-                                </Typography>
+                                <div className='flex gap-1 space-y-4 items-center'>
+                                    <Icons.check className="h-8 w-8 mr-2" />
+                                    <Typography sx={{ fontSize: 20 }} className=''>
+                                        {text}
+                                    </Typography>
+                                </div>
                             )
                         })
                     }

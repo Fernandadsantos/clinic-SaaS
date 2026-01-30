@@ -4,6 +4,8 @@ export interface BtnWithLinkProps{
     path: string;
     variant: "text" | "outlined" | "contained";
     size?: "small" | "medium" | "large";
+    textColor?: string;
+    btnColor: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 };
 
 export type IconNames = keyof typeof Icons;
