@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import BtnWithLink from "../interfaces";
+import { BtnWithLinkProps } from "../interfaces/index";
 
-export default function Btn({ text, path, variant, size }: BtnWithLink) {
+export default function Btn({ text, path, variant, size }: BtnWithLinkProps) {
     return (
         <Link to={path}>
             <Button
