@@ -16,6 +16,7 @@ export interface CardsContentProps{
     typeIcon: IconNames;
 };
 
+
 export interface PricingCardsProps{
     title: string;
     description: string;
@@ -25,6 +26,9 @@ export interface PricingCardsProps{
     resoures: string[];
 }
 
+export interface PricingCardsModel{
+    cards: PricingCardsProps[];
+}
 export interface HeaderProps{
     btnText1: string;
     btnText2: string;

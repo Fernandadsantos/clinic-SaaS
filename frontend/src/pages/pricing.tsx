@@ -1,10 +1,11 @@
 import { Skeleton } from "@mui/material";
-import CardsPricing from "../components/pricingCards";
+import PricingCards from "../components/pricingCards";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { Icons } from "../icons/icons";
 import { PricingCardsProps } from "../interfaces";
 import { useEffect, useState } from "react";
+import Carousel from "../components/carousel";
 
 export default function Pricing() {
     const cards: PricingCardsProps[] = [
@@ -55,51 +56,35 @@ export default function Pricing() {
         },
     ];
 
-    const [card, setCard] = useState<boolean>(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setCard(true);
-        }, 3000);
-
-        return () => clearTimeout(timer);
-    }, [])
-
     return (
         <div className="min-h-screen text-center">
             <Header btnText1="Entrar" btnText2="Criar Conta" />
-            <section className="py-12 sm:py-20 bg-green-50">
-                <div className="">
-                    <div className='text-6xl font-bold '>
-                        <h1 className=' bg-gray-800 bg-clip-text text-transparent'>Gestão Completa</h1>
-                        <h1 className=' bg-green-700 bg-clip-text text-transparent'>para sua Clínica</h1>
+            <section className="py-12 sm:py-18 bg-green-50 min-h-screen">
+                <div>
+                    <div>
+                        <div className='text-6xl font-bold mb-10'>
+                            <h1 className=' bg-gray-800 bg-clip-text text-transparent'>Escolha o Plano</h1>
+                            <h1 className=' bg-green-700 bg-clip-text text-transparent'>Ideal para sua Clínica</h1>
+                        </div>
+                        <div className="">
+                            <div className="flex items-center gap-3 justify-center  mb-2">
+                                <p className='text-xl font-light'>Pagamento seguro processado pelo Stripe</p>
+                                <Icons.lock className="h-5 w-5" />
+                            </div>
+                            <p className='text-base text-gray-500 font-normal'>Todos os planos incluem 14 dias de teste grátis • Cancele quando quiser</p>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto mt-10 items-center">
-                        {
-                            card && cards ? (
-                                cards.map((card) => {
-                                    return (
-                                        <CardsPricing
-                                            title={card.title}
-                                            description={card.description}
-                                            price={card.price}
-                                            isBasic={card.isBasic}
-                                            path={card.path}
-                                            resoures={card.resoures}
-                                        />
-                                    )
-                                })
-                            ) : (
-                                <Skeleton variant="rectangular" width={400} height={700} className="rounded-xl" />
-
-                            )}
+                    <div className="items-center">
+                        <div className="gap-8 w-full max-w-7xl mx-auto mt-10 items-center">
+                            <Carousel cards={cards} />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* <div className="">
+            <div className="">
                 <Footer />
-            </div> */}
+            </div>
         </div>
     );
 }

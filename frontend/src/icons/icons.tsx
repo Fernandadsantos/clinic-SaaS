@@ -153,7 +153,6 @@ export const Icons = {
             {...props}
         >
             <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
         </svg>
     ),
     arrowUp: (props: IconProps) => (
@@ -171,6 +170,44 @@ export const Icons = {
             <path d="m5 12 7-7 7 7" />
             {/* A linha vertical do corpo da seta */}
             <path d="M12 19V5" />
+        </svg>
+    ),
+    arrowRight: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <path d="m9 18 6-6-6-6" />
+        </svg>
+    ),
+    creditCard: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <rect width="20" height="14" x="2" y="5" rx="2" />
+            <line x1="2" x2="22" y1="10" y2="10" />
+        </svg>
+    ),
+    lock: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
     ),
 };
