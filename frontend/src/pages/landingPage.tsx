@@ -90,7 +90,7 @@ export default function LandingPage() {
 
     return (
         <div className="min-h-screen text-center">
-            <Header />
+            <Header btnText1='Entrar' btnText2='Planos' />
 
             <div className={`fixed right-5 bottom-5 md:right-10 md:bottom-10 z-[100] ${isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 <FloatingButton />

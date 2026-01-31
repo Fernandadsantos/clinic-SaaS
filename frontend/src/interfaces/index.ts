@@ -15,3 +15,17 @@ export interface CardsContentProps{
     resources: string[];
     typeIcon: IconNames;
 };
+
+export interface PricingCardsProps{
+    title: string;
+    description: string;
+    price: string;
+    path: string;
+    isBasic: boolean;
+    resoures: string[];
+}
+
+export interface HeaderProps{
+    btnText1: string;
+    btnText2: string;
+}
