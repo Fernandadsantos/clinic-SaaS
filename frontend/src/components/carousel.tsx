@@ -15,35 +15,51 @@ export default function Carousel({ cards }: PricingCardsModel) {
     };
 
     return (
-        <div className="flex items-center justify-center w-full max-w-4xl mx-auto py-8">
-
-            <button
-                onClick={prevSlide}
-                className="p-2 hover:bg-gray-200 rounded-full transition-colors focus:outline-none z-10"
-            >
-                <Icons.arrowLeft className="h-10 w-10 text-gray-600" />
-            </button>
-
-            <div className="flex-1 px-4 md:px-12 transition-opacity duration-300">
-                <PricingCard {...cards[currentIndex]} />
-
-                <div className="flex justify-center mt-6 gap-2">
+        <div className="w-full max-w-5xl mx-auto py-8 px-2 sm:px-4">
+            <div className="flex items-center justify-center">
+                <button
+                    onClick={prevSlide}
+                    className="hidden md:block p-3 hover:bg-green-100 rounded-full transition-colors focus:outline-none mr-4"
+                >
+                    <Icons.arrowLeft className="h-8 w-8 text-green-700" />
+                </button>
+                <div className="w-full max-w-sm md:max-w-md lg:max-w-lg transition-all duration-300 ease-in-out">
+                    <PricingCard {...cards[currentIndex]} />
+                </div>
+                <button
+                    onClick={nextSlide}
+                    className="hidden md:block p-3 hover:bg-green-100 rounded-full transition-colors focus:outline-none ml-4"
+                >
+                    <Icons.arrowRight className="h-8 w-8 text-green-700" />
+                </button>
+            </div>
+            <div className="flex items-center justify-center gap-6 mt-6">
+                <button
+                    onClick={prevSlide}
+                    className="md:hidden p-2 bg-white border border-gray-200 shadow-sm rounded-full hover:bg-gray-50 transition-colors"
+                >
+                    <Icons.arrowLeft className="h-6 w-6 text-gray-600" />
+                </button>
+                <div className="flex gap-2">
                     {cards.map((_, idx) => (
-                        <div
+                        <button
                             key={idx}
-                            className={`h-2 w-2 rounded-full transition-all ${idx === currentIndex ? "bg-green-600 w-4" : "bg-gray-300"
+                            onClick={() => setCurrentIndex(idx)}
+                            className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex
+                                ? "bg-green-600 w-8"
+                                : "bg-gray-300 w-2.5 hover:bg-gray-400"
                                 }`}
+                            aria-label={`Ir para plano ${idx + 1}`}
                         />
                     ))}
                 </div>
+                <button
+                    onClick={nextSlide}
+                    className="md:hidden p-2 bg-white border border-gray-200 shadow-sm rounded-full hover:bg-gray-50 transition-colors"
+                >
+                    <Icons.arrowRight className="h-6 w-6 text-gray-600" />
+                </button>
             </div>
-
-            <button
-                onClick={nextSlide}
-                className="p-2 hover:bg-gray-200 rounded-full transition-colors focus:outline-none z-10"
-            >
-                <Icons.arrowRight className="h-10 w-10 text-gray-600" />
-            </button>
         </div>
     );
 }

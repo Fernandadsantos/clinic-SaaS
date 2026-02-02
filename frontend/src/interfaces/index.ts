@@ -33,3 +33,14 @@ export interface HeaderProps{
     btnText1: string;
     btnText2: string;
 }
+
+export interface AssuranceSectionProps{
+    title: string;
+    description: string;
+    typeIcon: IconNames;
+}
+
+export interface FaqCardProps{
+    question: string;
+    awnser: string;
+}

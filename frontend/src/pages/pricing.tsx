@@ -1,14 +1,27 @@
-import { Skeleton } from "@mui/material";
-import PricingCards from "../components/pricingCards";
-import Footer from "../components/footer";
 import Header from "../components/header";
-import { Icons } from "../icons/icons";
-import { PricingCardsProps } from "../interfaces";
-import { useEffect, useState } from "react";
+import Footer from "../components/footer";
 import Carousel from "../components/carousel";
+import { PricingCardsProps } from "../interfaces";
+import { Skeleton } from "@mui/material";
+import AssuranceSection from "../components/assuranceSection";
+import FaqCard from "../components/faqCard";
 
 export default function Pricing() {
     const cards: PricingCardsProps[] = [
+        {
+            title: "Básico",
+            description: "Plano inicial gratuito",
+            price: "0",
+            isBasic: true,
+            path: "/planos/Basico",
+            resoures: [
+                "Até 5 usuários",
+                "Até 1000 pacientes",
+                "Atendimentos ilimitados",
+                "Conformidade LGPD",
+                "Suporte por email",
+            ],
+        },
         {
             title: "Profissional",
             description: "Ideal para clínicas de médio porte",
@@ -22,20 +35,6 @@ export default function Pricing() {
                 "Conformidade LGPD",
                 "Suporte por email e telefone",
                 "Relatórios avançados",
-            ],
-        },
-        {
-            title: "Basico",
-            description: "Plano inicial gratuito",
-            price: "0",
-            isBasic: true,
-            path: "/planos/Basico",
-            resoures: [
-                "Até 5 usuários",
-                "Até 1000 pacientes",
-                "Atendimentos ilimitados",
-                "Conformidade LGPD",
-                "Suporte por email",
             ],
         },
         {
@@ -57,34 +56,61 @@ export default function Pricing() {
     ];
 
     return (
-        <div className="min-h-screen text-center">
+        <div className="min-h-screen text-center bg-green-50">
             <Header btnText1="Entrar" btnText2="Criar Conta" />
-            <section className="py-12 sm:py-18 bg-green-50 min-h-screen">
-                <div>
-                    <div>
-                        <div className='text-6xl font-bold mb-10'>
-                            <h1 className=' bg-gray-800 bg-clip-text text-transparent'>Escolha o Plano</h1>
-                            <h1 className=' bg-green-700 bg-clip-text text-transparent'>Ideal para sua Clínica</h1>
-                        </div>
-                        <div className="">
-                            <div className="flex items-center gap-3 justify-center  mb-2">
-                                <p className='text-xl font-light'>Pagamento seguro processado pelo Stripe</p>
-                                <Icons.lock className="h-5 w-5" />
-                            </div>
-                            <p className='text-base text-gray-500 font-normal'>Todos os planos incluem 14 dias de teste grátis • Cancele quando quiser</p>
+            <section className="py-12 sm:py-20">
+                <div className="container mx-auto px-4">
+                    <div className='text-4xl md:text-6xl mb-6'>
+                        <h1 className="text-4xl sm:text-6xl font-bold mb-4">
+                            <span className="block text-gray-900">Escolha o Plano</span>
+                            <span className="block bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                                Ideal para sua Clínica
+                            </span>
+                        </h1>
+                        <div className="mt-3">
+                            <p className="text-xl text-gray-600 mb-4">
+                                Pagamento seguro processado pelo Stripe 🔒
+                            </p>
+                            <p className="text-base text-gray-500">
+                                Todos os planos incluem 14 dias de teste grátis • Cancele quando
+                                quiser
+                            </p>
                         </div>
                     </div>
-                    <div className="items-center">
-                        <div className="gap-8 w-full max-w-7xl mx-auto mt-10 items-center">
-                            <Carousel cards={cards} />
-                        </div>
+                    <div className="w-full mt-6">
+                        {
+                            cards ?
+                                (
+                                    <Carousel cards={cards} />
+                                )
+                                :
+                                (
+                                    <Skeleton height={620} width={500} />
+                                )
+                        }
                     </div>
                 </div>
             </section>
-
-            <div className="">
-                <Footer />
-            </div>
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <div className="grid md:grid-cols-3 gap-8 text-center">
+                    <AssuranceSection title="Pagamento Seguro" description="Processado pelo Stripe com criptografia de ponta a ponta" typeIcon="shield" />
+                    <AssuranceSection title="14 Dias Grátis" description="Teste sem compromisso e cancele quando quiser" typeIcon="check" />
+                    <AssuranceSection title="Suporte Dedicado" description="Nossa equipe está pronta para ajudar você" typeIcon="users" />
+                </div>
+            </section>
+            <section className="bg-white py-16">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+                        Perguntas Frequentes
+                    </h2>
+                    <div className="flex-col ">
+                        <FaqCard question="Posso mudar de plano depois?" awnser="Sim! Você pode fazer upgrade ou downgrade a qualquer momento. As mudanças são aplicadas no próximo ciclo de cobrança." />
+                        <FaqCard question="Como funciona o período de teste?" awnser="Você tem 14 dias para testar todos os recursos gratuitamente. Não cobramos nada até o final do período de teste." />
+                        <FaqCard question="Posso cancelar a qualquer momento?" awnser="Sim! Não há fidelidade. Cancele quando quiser e seus dados ficam disponíveis por 30 dias após o cancelamento." />
+                    </div>
+                </div>
+            </section>
+            <Footer />
         </div>
     );
 }
