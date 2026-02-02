@@ -44,3 +44,12 @@ export interface FaqCardProps{
     question: string;
     awnser: string;
 }
+
+export interface FormDataRegister{
+    email: string;
+    password: string;
+    confirmPassword: string;
+    clinicName: string;
+    cnpj: string;
+    userName: string;
+}
