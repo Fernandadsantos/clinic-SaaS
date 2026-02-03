@@ -32,6 +32,8 @@ export interface PricingCardsModel{
 export interface HeaderProps{
     btnText1: string;
     btnText2: string;
+    path1: string;
+    path2: string;
 }
 
 export interface AssuranceSectionProps{
@@ -52,4 +54,11 @@ export interface FormDataRegister{
     clinicName: string;
     cnpj: string;
     userName: string;
+}
+
+export interface PlanModalProps{
+    open: boolean;
+    setIsOpen: (isOpen: boolean) => void;
+    onLogin?: () => void;
+    onRegister?: () => void;
 }

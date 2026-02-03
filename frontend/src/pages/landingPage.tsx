@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '../components/header';
 import Btn from '../components/btn';
 import { Icons } from '../icons/icons';
 import { CardsContentProps } from "../interfaces/index"
 import BasicCard from '../components/BasicCard';
 import Footer from '../components/footer';
-import FloatingButton from '../components/flaotingButtom';
+import FloatingButton from '../components/floatingButtom';
+import ScrollToTop from '../components/scrollToTop';
 
 export default function LandingPage() {
     const cardsContent: CardsContentProps[] = [
@@ -69,29 +70,21 @@ export default function LandingPage() {
             ],
             typeIcon: "stethoscope"
         }
-    ]
-    const [isVisible, setIsVisible] = useState<boolean>(false);
+    ];
+    const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-
-            if (window.scrollY > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-
-    }, []);
+    const toResources = () => {
+        ref.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
 
     return (
         <div className="min-h-screen text-center">
-            <Header btnText1='Entrar' btnText2='Planos' />
-            <div className={`fixed right-5 bottom-5 md:right-10 md:bottom-10 z-[100] ${isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+            <ScrollToTop />
+            <Header btnText1='Entrar' btnText2='Planos' path1='/login' path2='/planos' />
+            <div className="fixed right-5 bottom-5 md:right-10 md:bottom-10 z-[100]">
                 <FloatingButton />
             </div>
             <section className='relative overflow-hidden py-20 sm:py-28 bg-green-50'>
@@ -109,9 +102,9 @@ export default function LandingPage() {
                         </div>
                         <div className='flex gap-4 justify-center mb-5'>
                             <Btn text='Começar gratuitamente' variant="contained" path='planos' size='large' btnColor="success" />
-                            <a href="#recursos">
-                                <Btn text='Conhecer recursos' variant="outlined" path='/#recursos' size='large' btnColor="success" />
-                            </a>
+                            <span onClick={toResources}>
+                                <Btn text='Conhecer recursos' variant="outlined" path='/ ' size='large' btnColor="success" />
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -137,11 +130,9 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            <section id='recursos' className='py-16'>
+            <section ref={ref} className='py-16'>
                 <div className='container mx-auto px-4 sm:px-6 lg:px-8 pb-16'>
-
-                    {/* Cabeçalho */}
-                    <div className='text-center mb-12'>
+                    <div className='text-center mb-10 mt-5'>
                         <h1 className='text-3xl md:text-4xl font-bold bg-green-700 bg-clip-text text-transparent mb-6'>
                             Tudo que você precisa para gerenciar a sua clínica
                         </h1>
@@ -149,8 +140,6 @@ export default function LandingPage() {
                             Ferramentas poderosas desenvolvidas especificamente para o setor de saúde
                         </p>
                     </div>
-
-                    {/* Grid de Cards Responsivo */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
                         {cardsContent?.map((card, index) => (
                             <div key={index} className="flex justify-center w-full">
@@ -180,7 +169,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            <div>
+            <div >
                 <Footer />
             </div>
         </div>

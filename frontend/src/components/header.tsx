@@ -2,7 +2,7 @@ import { Icons } from "../icons/icons";
 import { HeaderProps } from "../interfaces";
 import Btn from "./btn";
 
-export default function Header({ btnText1, btnText2 }: HeaderProps) {
+export default function Header({ btnText1, btnText2, path1, path2 }: HeaderProps) {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-green-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 transition-all duration-300">
@@ -23,8 +23,8 @@ export default function Header({ btnText1, btnText2 }: HeaderProps) {
                     </div>
                     <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                         <div className="scale-90 sm:scale-100 flex gap-2 sm:gap-3">
-                            <Btn text={btnText1} path="/login" variant="outlined" size="medium" btnColor="success" />
-                            <Btn text={btnText2} path="/planos" variant="contained" size="medium" btnColor="success" />
+                            <Btn text={btnText1} path={path1} variant="outlined" size="medium" btnColor="success" />
+                            <Btn text={btnText2} path={path2} variant="contained" size="medium" btnColor="success" />
                         </div>
                     </div>
 

@@ -5,6 +5,8 @@ import { PricingCardsProps } from "../interfaces";
 import { Skeleton } from "@mui/material";
 import AssuranceSection from "../components/assuranceSection";
 import FaqCard from "../components/faqCard";
+import FloatingButton from "../components/floatingButtom";
+import ScrollToTop from "../components/scrollToTop";
 
 export default function Pricing() {
     const cards: PricingCardsProps[] = [
@@ -57,7 +59,11 @@ export default function Pricing() {
 
     return (
         <div className="min-h-screen text-center bg-green-50">
-            <Header btnText1="Entrar" btnText2="Criar Conta" />
+            <ScrollToTop />
+            <Header btnText1="Entrar" btnText2="Criar Conta" path1="/login" path2="/cadastro" />
+            <div className={`fixed right-5 bottom-5 md:right-10 md:bottom-10 z-[100]`}>
+                <FloatingButton />
+            </div>
             <section className="py-12 sm:py-20">
                 <div className="container mx-auto px-4">
                     <div className='text-4xl md:text-6xl mb-6'>
