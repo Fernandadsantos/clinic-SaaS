@@ -99,9 +99,9 @@ export default function Pricing() {
             </section>
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
                 <div className="grid md:grid-cols-3 gap-8 text-center">
-                    <AssuranceSection title="Pagamento Seguro" description="Processado pelo Stripe com criptografia de ponta a ponta" typeIcon="shield" />
-                    <AssuranceSection title="14 Dias Grátis" description="Teste sem compromisso e cancele quando quiser" typeIcon="check" />
-                    <AssuranceSection title="Suporte Dedicado" description="Nossa equipe está pronta para ajudar você" typeIcon="users" />
+                    <AssuranceSection title="Pagamento Seguro" description="Processado pelo Stripe com criptografia de ponta a ponta" typeIcon="Shield" />
+                    <AssuranceSection title="14 Dias Grátis" description="Teste sem compromisso e cancele quando quiser" typeIcon="Check" />
+                    <AssuranceSection title="Suporte Dedicado" description="Nossa equipe está pronta para ajudar você" typeIcon="Users" />
                 </div>
             </section>
             <section className="bg-white py-16">

@@ -35,7 +35,7 @@ export default function FloatingButton() {
     return (
         <Box sx={{ '& > :not(style)': { m: 1 } }}>
             <Fab color="success" aria-label="add" className=' hover:shadow-2xl transition-shadow' onClick={scrollToTop}>
-                <Icons.arrowUp className='w-10 h-10' />
+                <Icons.ArrowUp className='w-10 h-10' />
             </Fab>
         </Box>
     );

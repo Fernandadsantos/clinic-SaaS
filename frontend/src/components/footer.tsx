@@ -9,7 +9,7 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center gap-2 mb-4">
                             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                                <Icons.stethoscope />
+                                <Icons.Stethoscope />
                             </div>
                             <span className="text-xl font-bold text-white">ClinicOps</span>
                         </div>

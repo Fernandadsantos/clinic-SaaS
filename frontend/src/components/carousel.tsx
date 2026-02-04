@@ -21,7 +21,7 @@ export default function Carousel({ cards }: PricingCardsModel) {
                     onClick={prevSlide}
                     className="hidden md:block p-3 hover:bg-green-100 rounded-full transition-colors focus:outline-none mr-4"
                 >
-                    <Icons.arrowLeft className="h-8 w-8 text-green-700" />
+                    <Icons.ArrowLeft className="h-8 w-8 text-green-700" />
                 </button>
                 <div className="w-full max-w-sm md:max-w-md lg:max-w-lg transition-all duration-300 ease-in-out">
                     <PricingCard {...cards[currentIndex]} />
@@ -30,7 +30,7 @@ export default function Carousel({ cards }: PricingCardsModel) {
                     onClick={nextSlide}
                     className="hidden md:block p-3 hover:bg-green-100 rounded-full transition-colors focus:outline-none ml-4"
                 >
-                    <Icons.arrowRight className="h-8 w-8 text-green-700" />
+                    <Icons.ArrowRight className="h-8 w-8 text-green-700" />
                 </button>
             </div>
             <div className="flex items-center justify-center gap-6 mt-6">
@@ -38,7 +38,7 @@ export default function Carousel({ cards }: PricingCardsModel) {
                     onClick={prevSlide}
                     className="md:hidden p-2 bg-white border border-gray-200 shadow-sm rounded-full hover:bg-gray-50 transition-colors"
                 >
-                    <Icons.arrowLeft className="h-6 w-6 text-gray-600" />
+                    <Icons.ArrowLeft className="h-6 w-6 text-gray-600" />
                 </button>
                 <div className="flex gap-2">
                     {cards.map((_, idx) => (
@@ -57,7 +57,7 @@ export default function Carousel({ cards }: PricingCardsModel) {
                     onClick={nextSlide}
                     className="md:hidden p-2 bg-white border border-gray-200 shadow-sm rounded-full hover:bg-gray-50 transition-colors"
                 >
-                    <Icons.arrowRight className="h-6 w-6 text-gray-600" />
+                    <Icons.ArrowRight className="h-6 w-6 text-gray-600" />
                 </button>
             </div>
         </div>

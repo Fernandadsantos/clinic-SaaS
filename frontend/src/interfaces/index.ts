@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {Icons} from "../icons/icons"
 export interface BtnWithLinkProps{
     text: string;
@@ -8,14 +9,13 @@ export interface BtnWithLinkProps{
     btnColor: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 };
 
-export type IconNames = keyof typeof Icons;
+export type IconNames = keyof typeof Icons ;
 export interface CardsContentProps{
     title: string;
     description: string;
     resources: string[];
     typeIcon: IconNames;
 };
-
 
 export interface PricingCardsProps{
     title: string;
@@ -62,4 +62,49 @@ export interface FormDataRegister {
     cnpj?: string;
     userName?: string;
     selectedPlan?: string;
+}
+
+export interface Patient {
+    id: string;
+    name: string;
+    CPF?: string;
+    phone?: string;
+    email?: string;
+}
+
+export interface Appointment {
+    id: string;
+    date_appointment: string;
+    reason?: string;
+    type: string;
+    patient: Patient;
+}
+
+export type UserRole = 'ROLE_MASTER' | 'ROLE_ADMIN' | 'ROLE_USER' | 'ROLE_ALL';
+export interface User {
+    id: string;
+    name: string;
+    email: string;
+    role: UserRole;
+    tenantId?: string;
+}
+export interface AuthState {
+    user: User | null;
+    token: string | null;
+    isAuthenticated: boolean;
+    isLoading: boolean;
+    error: string | null;
+}
+export interface UserRoleBadgeProps {
+    role: UserRole | string;
+}
+export interface DashboardLayoutProps {
+    children: ReactNode;
+}
+export interface NavSideBarProps {
+    title: string;
+    href: string;
+    icon: IconNames | null;
+    separator?: boolean;
+    role: UserRole;
 }

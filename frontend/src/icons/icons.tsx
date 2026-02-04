@@ -1,9 +1,9 @@
 import type { SVGProps } from "react";
 
-type IconProps = SVGProps<SVGSVGElement>;
+type IconProps = SVGProps<SVGSVGElement> | null;
 
 export const Icons = {
-    stethoscope: (props: IconProps) => (
+    Stethoscope: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -21,7 +21,7 @@ export const Icons = {
             <circle cx="20" cy="10" r="2" />
         </svg>
     ),
-    shield: (props: IconProps) => (
+    Shield: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -37,7 +37,7 @@ export const Icons = {
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
         </svg>
     ),
-    check: (props: IconProps) => (
+    Check: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -53,7 +53,7 @@ export const Icons = {
             <polyline points="20 6 9 17 4 12" />
         </svg>
     ),
-    plus: (props: IconProps) => (
+    Plus: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ export const Icons = {
             <path d="M12 5v14" />
         </svg>
     ),
-    users: (props: IconProps) => (
+    Users: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -87,7 +87,7 @@ export const Icons = {
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
     ),
-    calendar: (props: IconProps) => (
+    Calendar: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -106,7 +106,7 @@ export const Icons = {
             <line x1="3" x2="21" y1="10" y2="10" />
         </svg>
     ),
-    chart: (props: IconProps) => (
+    Chart: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -124,7 +124,7 @@ export const Icons = {
             <line x1="6" x2="6" y1="20" y2="16" />
         </svg>
     ),
-    fileText: (props: IconProps) => (
+    FileText: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -143,7 +143,7 @@ export const Icons = {
             <line x1="16" x2="8" y1="17" y2="17" />
         </svg>
     ),
-    arrowLeft: (props: IconProps) => (
+    ArrowLeft: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -155,7 +155,7 @@ export const Icons = {
             <path d="m12 19-7-7 7-7" />
         </svg>
     ),
-    arrowUp: (props: IconProps) => (
+    ArrowUp: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -172,7 +172,7 @@ export const Icons = {
             <path d="M12 19V5" />
         </svg>
     ),
-    arrowRight: (props: IconProps) => (
+    ArrowRight: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -184,7 +184,7 @@ export const Icons = {
             <path d="m9 18 6-6-6-6" />
         </svg>
     ),
-    creditCard: (props: IconProps) => (
+    CreditCard: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -197,7 +197,7 @@ export const Icons = {
             <line x1="2" x2="22" y1="10" y2="10" />
         </svg>
     ),
-    lock: (props: IconProps) => (
+    Lock: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -210,7 +210,7 @@ export const Icons = {
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
     ),
-    eye: (props: IconProps) => (
+    Eye: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -223,7 +223,7 @@ export const Icons = {
             <circle cx="12" cy="12" r="3" />
         </svg>
     ),
-    eyeClosed: (props: IconProps) => (
+    EyeClosed: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -241,7 +241,7 @@ export const Icons = {
             <path d="M2 2l20 20" />
         </svg>
     ),
-    loading: (props: IconProps) => (
+    Loading: (props: IconProps) => (
         <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
             <circle
                 className="opacity-25"
@@ -259,7 +259,7 @@ export const Icons = {
             ></path>
         </svg>
     ),
-    key: (props: IconProps) => (
+    Key: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -271,7 +271,7 @@ export const Icons = {
             <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
         </svg>
     ),
-    send: (props: IconProps) => (
+    Send: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -284,7 +284,7 @@ export const Icons = {
             <path d="M22 2 11 13" />
         </svg>
     ),
-    mail: (props: IconProps) => (
+    Mail: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -297,7 +297,7 @@ export const Icons = {
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
         </svg>
     ),
-    x: (props: IconProps) => (
+    X: (props: IconProps) => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -308,6 +308,103 @@ export const Icons = {
         >
             <path d="M18 6 6 18" />
             <path d="m6 6 12 12" />
+        </svg>
+    ),
+    Building: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+            <path d="M9 22v-4h6v4" />
+            <path d="M8 6h.01" />
+            <path d="M16 6h.01" />
+            <path d="M12 6h.01" />
+            <path d="M12 10h.01" />
+            <path d="M12 14h.01" />
+            <path d="M16 10h.01" />
+            <path d="M16 14h.01" />
+            <path d="M8 10h.01" />
+            <path d="M8 14h.01" />
+        </svg>
+    ),
+    UserCog: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 1v6m0 6v6" />
+            <path d="m19.07 4.93-4.24 4.24m0 5.66 4.24 4.24m-14.14 0 4.24-4.24m0-5.66L4.93 4.93" />
+        </svg>
+    ),
+    LogOut: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" x2="9" y1="12" y2="12" />
+        </svg>
+    ),
+    BarChart: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            {...props}
+        >
+            <line x1="12" x2="12" y1="20" y2="10" />
+            <line x1="18" x2="18" y1="20" y2="4" />
+            <line x1="6" x2="6" y1="20" y2="16" />
+        </svg>
+    ),
+    Home: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+    ),
+    Menu: (props: IconProps) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
         </svg>
     ),
 };

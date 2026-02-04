@@ -18,7 +18,7 @@ export default function LandingPage() {
                 "Criptografia end-to-end",
                 "Auditoria completa"
             ],
-            typeIcon: "shield"
+            typeIcon: "Shield"
         },
         {
             title: "Gestão de Pacientes",
@@ -28,7 +28,7 @@ export default function LandingPage() {
                 "Histórico completo",
                 "Anexos e documentos"
             ],
-            typeIcon: "users"
+            typeIcon: "Users"
         },
         {
             title: "Agenda Inteligente",
@@ -38,7 +38,7 @@ export default function LandingPage() {
                 "Lembretes automáticos",
                 "Confirmação por WhatsApp"
             ],
-            typeIcon: "calendar"
+            typeIcon: "Calendar"
         },
         {
             title: "Dashboard Analítico",
@@ -48,7 +48,7 @@ export default function LandingPage() {
                 "Relatórios financeiros",
                 "Análise de desempenho"
             ],
-            typeIcon: "chart"
+            typeIcon: "Chart"
         },
         {
             title: "Gestão Financeira",
@@ -58,7 +58,7 @@ export default function LandingPage() {
                 "Integração bancária",
                 "Notas fiscais automáticas"
             ],
-            typeIcon: "fileText"
+            typeIcon: "FileText"
         },
         {
             title: "Telemedicina",
@@ -68,7 +68,7 @@ export default function LandingPage() {
                 "Videochamadas seguras",
                 "Sala de espera virtual"
             ],
-            typeIcon: "stethoscope"
+            typeIcon: "Stethoscope"
         }
     ];
     const ref = useRef<HTMLDivElement>(null);
@@ -114,16 +114,16 @@ export default function LandingPage() {
                     </p>
                     <div className='flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16'>
                         <div className='flex gap-2 items-center'>
-                            <Icons.shield className="h-6 w-6 text-green-600" />
+                            <Icons.Shield className="h-6 w-6 text-green-600" />
                             <p className="font-medium text-gray-700">LGPD Compliant</p>
                         </div>
 
                         <div className='flex gap-2 items-center'>
-                            <Icons.check className="h-6 w-6 text-green-600" />
+                            <Icons.Check className="h-6 w-6 text-green-600" />
                             <p className="font-medium text-gray-700">ISO 27001</p>
                         </div>
                         <div className='flex gap-2 items-center'>
-                            <Icons.plus className="h-6 w-6 text-green-600" />
+                            <Icons.Plus className="h-6 w-6 text-green-600" />
                             <p className="font-medium text-gray-700">10.000 clínicas</p>
                         </div>
 

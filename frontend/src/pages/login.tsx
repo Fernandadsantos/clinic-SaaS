@@ -101,7 +101,7 @@ export default function Login() {
                                 className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer hover:text-gray-700"
                                 onClick={() => setIsVisible(!isVisible)}>
                                 {
-                                    isVisible ? <Icons.eye /> : <Icons.eyeClosed />
+                                    isVisible ? <Icons.Eye /> : <Icons.EyeClosed />
                                 }
                             </button>
                         </div>
@@ -129,7 +129,7 @@ export default function Login() {
                     >
                         {isLoading ? (
                             <span className="flex items-center justify-center">
-                                <Icons.loading />
+                                <Icons.Loading />
                                 Entrando...
                             </span>
                         ) : (

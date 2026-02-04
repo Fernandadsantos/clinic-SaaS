@@ -1,8 +1,5 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardsContentProps } from "../interfaces";
 import { Icons } from '../icons/icons';
@@ -30,7 +27,7 @@ export default function BasicCard({ title, description, resources, typeIcon }: C
                         resources.map((text) => {
                             return (
                                 <div className='flex gap-1 space-y-4 items-center'>
-                                    <Icons.check className="h-8 w-8 mr-2" />
+                                    <Icons.Check className="h-8 w-8 mr-2" />
                                     <Typography sx={{ fontSize: 20 }} className=''>
                                         {text}
                                     </Typography>

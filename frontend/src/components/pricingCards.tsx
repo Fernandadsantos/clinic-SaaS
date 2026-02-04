@@ -53,7 +53,7 @@ export default function PricingCard({ title, description, price, isBasic, resour
                             {resoures.map((item, index) => (
                                 <ListItem key={index} disableGutters className="py-1">
                                     <ListItemIcon sx={{ minWidth: 30 }}>
-                                        <Icons.check fontSize="small" className="text-green-600" />
+                                        <Icons.Check fontSize="small" className="text-green-600" />
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={item}

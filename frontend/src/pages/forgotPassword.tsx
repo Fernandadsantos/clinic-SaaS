@@ -36,7 +36,7 @@ export default function ForgotPassword() {
                 <div className="p-8 pb-6 text-center space-y-4">
                     <div className="flex justify-center">
                         <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center shadow-inner">
-                            <Icons.key className="h-8 w-8 text-green-600" />
+                            <Icons.Key className="h-8 w-8 text-green-600" />
                         </div>
                     </div>
                     <div>
@@ -57,7 +57,7 @@ export default function ForgotPassword() {
                             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                                 <div className="flex items-start gap-3">
                                     <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                        <Icons.check className="h-4 w-4 text-white" />
+                                        <Icons.Check className="h-4 w-4 text-white" />
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-green-900 text-sm mb-1">
@@ -87,7 +87,7 @@ export default function ForgotPassword() {
                                     onClick={() => navigate("/login")}
                                     className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors shadow-sm"
                                 >
-                                    <Icons.arrowLeft className="h-4 w-4" />
+                                    <Icons.ArrowLeft className="h-4 w-4" />
                                     Voltar ao Login
                                 </button>
                                 <button
@@ -109,7 +109,7 @@ export default function ForgotPassword() {
                                 </label>
                                 <div className="relative">
                                     <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                                        <Icons.mail className="h-5 w-5 text-gray-400" />
+                                        <Icons.Mail className="h-5 w-5 text-gray-400" />
                                     </div>
                                     <input
                                         id="email"
@@ -142,7 +142,7 @@ export default function ForgotPassword() {
                                         </>
                                     ) : (
                                         <>
-                                            <Icons.send className="h-4 w-4" />
+                                            <Icons.Send className="h-4 w-4" />
                                             Enviar Link de Recuperação
                                         </>
                                     )}
@@ -154,7 +154,7 @@ export default function ForgotPassword() {
                                     onClick={() => navigate("/login")}
                                     disabled={loading}
                                 >
-                                    <Icons.arrowLeft className="h-4 w-4" />
+                                    <Icons.ArrowLeft className="h-4 w-4" />
                                     Voltar ao Login
                                 </button>
                             </div>

@@ -10,7 +10,7 @@ export default function Header({ btnText1, btnText2, path1, path2 }: HeaderProps
                 <div className="flex h-16 md:h-20 items-center justify-between gap-2 md:gap-4">
                     <div className="flex space-x-2 items-center min-w-0 flex-shrink-1 cursor-pointer">
                         <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-sm">
-                            <Icons.stethoscope className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                            <Icons.Stethoscope className="h-5 w-5 md:h-6 md:w-6 text-white" />
                         </div>
                         <div className="items-center gap-0.5 md:gap-1 hidden sm:flex">
                             <h1 className='text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent truncate tracking-tight'>

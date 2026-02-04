@@ -34,7 +34,7 @@ export default function PlanModal({ open, setIsOpen, onLogin, onRegister }: Plan
                         Já possui uma conta?
                     </Typography>
                     <div onClick={handleClose} className="w-6 h-6 cursor-pointer ">
-                        <Icons.x className="hover:text-red-600" />
+                        <Icons.X className="hover:text-red-600" />
                     </div>
                 </Stack>
 
