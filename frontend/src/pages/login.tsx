@@ -1,32 +1,50 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { loginStart, loginSuccess, loginFailure } from "../store/modules/auth/authSlice";
 import { Icons } from "../icons/icons";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string>("");
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
-    async function handleSubmit(e: React.FormEvent) {
+    const dispatch = useAppDispatch();
+    const { isLoading, error } = useAppSelector((state) => state.auth);
+
+    async function handleSubmit(e: React.SubmitEvent) {
         e.preventDefault();
-        setLoading(true);
-        setError("");
+
+        dispatch(loginStart());
 
         try {
 
+            if (email.toLowerCase() === "fernandassilvasantoss@gmail.com" && password === "123456") {
+
+                const fakeUserPayload = {
+                    user: {
+                        id: "1",
+                        name: "Fernanda Silva",
+                        email: email,
+                        role: "ROLE_ADMIN" as const,
+                        tenantId: "tenant_123"
+                    },
+                    token: "fake-jwt-token-123456"
+                };
+
+                dispatch(loginSuccess(fakeUserPayload));
+
+                navigate("/dashboard");
+            } else {
+                throw new Error("Credenciais inválidas");
+            }
+
         } catch (error: Error | unknown) {
-
             const errorMessage = error instanceof Error ? error.message : String(error);
-            console.error("Error login:", error);
-            alert("Erro ao fazer login: " + errorMessage);
 
-            setError(errorMessage);
-        } finally {
-            setLoading(false);
+            dispatch(loginFailure(errorMessage));
         }
     }
 
@@ -79,6 +97,7 @@ export default function Login() {
                                 minLength={6}
                             />
                             <button
+                                type="button"
                                 className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer hover:text-gray-700"
                                 onClick={() => setIsVisible(!isVisible)}>
                                 {
@@ -105,10 +124,10 @@ export default function Login() {
 
                     <button
                         type="submit"
-                        disabled={loading}
+                        disabled={isLoading}
                         className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {loading ? (
+                        {isLoading ? (
                             <span className="flex items-center justify-center">
                                 <Icons.loading />
                                 Entrando...

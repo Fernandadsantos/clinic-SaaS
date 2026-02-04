@@ -47,18 +47,19 @@ export interface FaqCardProps{
     awnser: string;
 }
 
-export interface FormDataRegister{
-    email: string;
-    password: string;
-    confirmPassword: string;
-    clinicName: string;
-    cnpj: string;
-    userName: string;
-}
-
 export interface PlanModalProps{
     open: boolean;
     setIsOpen: (isOpen: boolean) => void;
     onLogin?: () => void;
     onRegister?: () => void;
+}
+
+export interface FormDataRegister {
+    email?: string;
+    password?: string;
+    confirmPassword?: string;
+    clinicName?: string;
+    cnpj?: string;
+    userName?: string;
+    selectedPlan?: string;
 }
