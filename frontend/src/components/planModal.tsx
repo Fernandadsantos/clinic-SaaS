@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Typography, Stack } from "@mui/material";
+import { Box, Modal, Typography, Stack } from "@mui/material";
 import { PlanModalProps } from "../interfaces";
 import { Icons } from "../icons/icons";
 import Btn from "./btn";
@@ -43,7 +43,6 @@ export default function PlanModal({ open, setIsOpen, onLogin, onRegister }: Plan
                 </Typography>
 
                 <Stack spacing={2} className="items-center w-full">
-                    {/* Botão de Destaque: Criar Conta */}
                     <Btn size="large" text="Criar nova conta" path="/cadastro" variant="contained" btnColor="success" />
                     <Btn size="large" text="Já tenho conta" path="/login" variant="outlined" btnColor="success" />
 
