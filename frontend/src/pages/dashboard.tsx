@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Appointment } from "../interfaces";
-import { Skeleton } from "@mui/material";
+import { Card, Skeleton, Typography } from "@mui/material";
 import { useAppSelector } from "../store/hooks";
 import { UserRoleBadge } from "../components/badges";
 import { DashboardLayout } from "../components/layout/dashboardLayout";
+import { Icons } from "../icons/icons";
+import DashboardCard from "../components/dashboardCard";
 
 
 
@@ -39,7 +41,7 @@ export default function Dashboard() {
 
     return (
         <DashboardLayout>
-            <div className="p-6">
+            <div className="p-6 w-full">
                 <div className="mb-8">
                     {user && (
                         <div className="flex items-center justify-between h-fit">
@@ -52,6 +54,16 @@ export default function Dashboard() {
                         </div>
                     )}
                 </div>
+
+                <section className="w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 max-w-full">
+                        <DashboardCard title="Pacientes" icon="Users" path="/dashboard/pacientes" content={'0'} color="bg-green-200" />
+                        <DashboardCard title="Atendimentos Hoje" icon="Calendar" path="/dashboard/pacientes/agendamentos" content={'0'} color="bg-red-200" />
+                        <DashboardCard title="Atendimentos do Mês" icon="BarChart" path="/dashboard/pacientes/agendamentos" content={'0'} color="bg-blue-200" />
+                        <DashboardCard title="Plano atual" icon="Check" path="/dashboard/meu_plano" content={"Básico"} color="bg-purple-200" />
+                    </div>
+
+                </section>
             </div>
         </DashboardLayout>
     );

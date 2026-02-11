@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import {Icons} from "../icons/icons"
+import { NavigateProps } from "react-router-dom";
 export interface BtnWithLinkProps{
     text: string;
     path: string;
@@ -107,4 +108,12 @@ export interface NavSideBarProps {
     icon: IconNames | null;
     separator?: boolean;
     role: UserRole;
+}
+
+export default interface DashboardCardProps{
+    content: string;
+    path: string;
+    title: string;
+    icon: IconNames;
+    color: string;
 }
