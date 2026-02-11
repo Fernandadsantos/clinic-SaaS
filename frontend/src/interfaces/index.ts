@@ -110,10 +110,17 @@ export interface NavSideBarProps {
     role: UserRole;
 }
 
-export default interface DashboardCardProps{
-    content: string;
+export interface DashboardCardProps{
+    content?: number;
     path: string;
-    title: string;
-    icon: IconNames;
+    title?: string;
+    icon?: IconNames ;
     color: string;
 }
+
+export interface DashboardActionCardProps{
+    title?: string;
+    icon?: IconNames;
+    children?: ReactNode;
+}
+

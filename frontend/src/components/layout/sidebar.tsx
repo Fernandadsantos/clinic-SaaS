@@ -38,9 +38,6 @@ export function Sidebar() {
 
     return (
         <>
-            {/* 1. OVERLAY (FUNDO ESCURO/TURVO) 
-               Ele está sempre aqui, mas controlamos a opacidade e visibilidade com CSS
-            */}
             <div
                 className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
                     }`}
@@ -49,7 +46,7 @@ export function Sidebar() {
 
             <aside
                 className={`
-                     h-screen bg-white border-r border-gray-200 z-50 flex flex-col
+                    h-screen bg-white border-r border-gray-200 z-50 flex flex-col
                     transition-all duration-300 ease-in-out overflow-hidden
                     ${isOpen ? 'w-80 md:w-64 lg:w-72' : 'w-16'}
                 `}
@@ -77,7 +74,7 @@ export function Sidebar() {
                 </div>
                 <div className={`flex-1 flex flex-col space-y-2 px-4 transition-opacity duration-200 ${isOpen ? 'opacity-100 delay-75' : 'opacity-0 invisible'}`}>
                     <nav className="space-y-2 flex-1 overflow-y-auto">
-                        {navigation.map((item, index) => {
+                        {navigation.filter((e) => e.role === user?.role).map((item, index) => {
                             if (item.separator) {
                                 return <div key={`separator-${index}`} className="border-t border-gray-200 my-2" />
                             }

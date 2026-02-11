@@ -28,7 +28,7 @@ export default function Login() {
                         id: "1",
                         name: "Fernanda Silva",
                         email: email,
-                        role: "ROLE_ADMIN" as const,
+                        role: "ROLE_USER" as const,
                         tenantId: "tenant_123"
                     },
                     token: "fake-jwt-token-123456"
