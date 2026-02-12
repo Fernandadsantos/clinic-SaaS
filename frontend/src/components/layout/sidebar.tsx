@@ -17,7 +17,7 @@ export function Sidebar() {
         { title: 'Dashboard', href: '/dashboard', icon: "BarChart", role: "ROLE_USER" },
         { title: 'Dashboard Plataforma', href: '/dashboard/plataforma', icon: "BarChart", role: 'ROLE_MASTER' },
         { title: '---', href: '#', icon: null, separator: true, role: 'ROLE_ALL' },
-        { title: 'Pacientes', href: '/dashboard/patients', icon: "Users", role: 'ROLE_USER' },
+        { title: 'Pacientes', href: '/dashboard/pacientes', icon: "Users", role: 'ROLE_USER' },
         { title: 'Atendimentos', href: '/dashboard/atendimentos', icon: "Calendar", role: 'ROLE_USER' },
         { title: 'Relatórios', href: '/dashboard/relatorios', icon: "FileText", role: "ROLE_ADMIN" },
         { title: 'Usuários', href: '/dashboard/usuarios', icon: "UserCog", role: 'ROLE_ADMIN' },
@@ -39,7 +39,7 @@ export function Sidebar() {
     return (
         <>
             <div
-                className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                className={`fixed h-screen inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
                     }`}
                 onClick={() => setIsOpen(false)}
             />

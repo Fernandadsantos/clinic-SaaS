@@ -71,6 +71,8 @@ export interface Patient {
     CPF?: string;
     phone?: string;
     email?: string;
+    birth?: string;
+    active: boolean;
 }
 
 export interface Appointment {

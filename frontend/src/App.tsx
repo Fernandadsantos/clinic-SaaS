@@ -6,6 +6,7 @@ import Login from './pages/login';
 import ForgotPassword from './pages/forgotPassword';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
+import Patients from './pages/patients';
 
 function App() {
   return (
@@ -16,9 +17,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/recuperar_senha' element={<ForgotPassword />} />
         <Route path='/cadastro' element={<Register />} />
-        <Route path='/cadastro' element={<Register />} />
         <Route path='/dashboard' element={<Dashboard />} />
-
+        <Route path='/dashboard/pacientes' element={<Patients />} />
       </Routes>
     </BrowserRouter>
   );

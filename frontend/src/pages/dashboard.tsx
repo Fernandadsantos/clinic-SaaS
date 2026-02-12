@@ -21,6 +21,8 @@ export default function Dashboard() {
                 CPF: "",
                 phone: "",
                 email: "",
+                active: true,
+                birth: "16/09/2004"
             },
         }
     ]
