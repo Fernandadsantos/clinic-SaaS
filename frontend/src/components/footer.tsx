@@ -11,7 +11,7 @@ export default function Footer() {
                             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                                 <Icons.Stethoscope />
                             </div>
-                            <span className="text-xl font-bold text-white">ClinicOps</span>
+                            <span className="text-xl font-bold text-white">ClinicSaaS</span>
                         </div>
                         <p className="text-sm text-gray-400">
                             Plataforma SaaS Multi-tenant para gestão de clínicas
@@ -66,8 +66,8 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-                    <p>© 2026 ClinicOps - Plataforma SaaS Multi-tenant</p>
-                    <p className="mt-2">Desenvolvido pro Fernanda Santos para o Case Técnico Dizevolv</p>
+                    <p>© 2026 ClinicSaaS - Plataforma SaaS Multi-tenant</p>
+                    <p className="mt-2">Desenvolvido pro Fernanda Santos para Case Técnico</p>
                 </div>
             </div>
         </footer>

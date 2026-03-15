@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import {Icons} from "../icons/icons"
-import { NavigateProps } from "react-router-dom";
 export interface BtnWithLinkProps{
     text: string;
     path: string;

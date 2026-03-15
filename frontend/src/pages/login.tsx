@@ -21,7 +21,7 @@ export default function Login() {
 
         try {
 
-            if (email.toLowerCase() === "fernandassilvasantoss@gmail.com" && password === "123456") {
+            if (email.toLowerCase() === "admin@gmail.com" && password === "123456") {
 
                 const fakeUserPayload = {
                     user: {
@@ -37,7 +37,42 @@ export default function Login() {
                 dispatch(loginSuccess(fakeUserPayload));
 
                 navigate("/dashboard");
-            } else {
+            }
+            else if (email.toLowerCase() === "user@gmail.com" && password === "123456") {
+
+                const fakeUserPayload = {
+                    user: {
+                        id: "1",
+                        name: "Exemplo",
+                        email: email,
+                        role: "ROLE_USER" as const,
+                        tenantId: "tenant_1234"
+                    },
+                    token: "fake-jwt-token-1234567"
+                };
+
+                dispatch(loginSuccess(fakeUserPayload));
+
+                navigate("/dashboard");
+            }
+            else if (email.toLowerCase() === "master@gmail.com" && password === "123456") {
+
+                const fakeUserPayload = {
+                    user: {
+                        id: "1",
+                        name: "Exemplo",
+                        email: email,
+                        role: "ROLE_MASTER" as const,
+                        tenantId: "tenant_12345"
+                    },
+                    token: "fake-jwt-token-12345678"
+                };
+
+                dispatch(loginSuccess(fakeUserPayload));
+
+                navigate("/dashboard");
+            }
+            else {
                 throw new Error("Credenciais inválidas");
             }
 
@@ -55,7 +90,7 @@ export default function Login() {
                     <h1 className="text-3xl font-bold text-gray-800 mb-2">
                         Bem-vindo de volta!
                     </h1>
-                    <p className="text-gray-600">Entre na sua conta ClinicOps</p>
+                    <p className="text-gray-600">Entre na sua conta ClinicSaaS</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -137,6 +172,13 @@ export default function Login() {
                         )}
                     </button>
                 </form>
+
+                <div className="mt-4">
+                    <p className="text-sm">Modo usuário <strong>user@gmail.com</strong></p>
+                    <p className="text-sm">Modo admin <strong>admin@gmail.com</strong></p>
+                    <p className="text-sm">Modo master <strong>master@gmail.com</strong></p>
+                    <p className="text-sm">Senha: 123456</p>
+                </div>
 
                 <div className="mt-6 text-center">
                     <p className="text-sm text-gray-600">

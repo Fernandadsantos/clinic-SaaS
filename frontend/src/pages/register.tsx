@@ -155,7 +155,6 @@ export default function Register() {
                     <div className="space-y-4 animate-fadeIn">
                         <Typography variant="h6" className="text-center pb-2">Selecione o porte da sua clínica</Typography>
                         <div className="grid gap-4">
-                            {/* Card Básico */}
                             <div
                                 onClick={() => handleSelectPlan('basic')}
                                 className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${formData.selectedPlan === 'basic' ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200 hover:border-emerald-200'}`}
@@ -167,7 +166,6 @@ export default function Register() {
                                 <p className="text-sm text-gray-500 mt-1">Até 5 usuários • Gestão básica</p>
                             </div>
 
-                            {/* Card Profissional */}
                             <div
                                 onClick={() => handleSelectPlan('pro')}
                                 className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${formData.selectedPlan === 'pro' ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200 hover:border-emerald-200'}`}
@@ -179,7 +177,6 @@ export default function Register() {
                                 <p className="text-sm text-gray-500 mt-1">Até 15 usuários • Relatórios • Suporte</p>
                             </div>
 
-                            {/* Card Enterprise */}
                             <div
                                 onClick={() => handleSelectPlan('ent')}
                                 className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${formData.selectedPlan === 'ent' ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200 hover:border-emerald-200'}`}
@@ -198,9 +195,6 @@ export default function Register() {
                     <div className="space-y-4 animate-fadeIn text-center py-6">
                         <div className="bg-gray-100 p-6 rounded-lg border border-gray-300 border-dashed">
                             <Typography color="textSecondary">Integração com Stripe</Typography>
-                            <p className="text-sm text-gray-500 mt-2">
-                                (Neste passo você renderizaria o componente do Stripe Elements ou similar)
-                            </p>
                         </div>
                         <p className="text-xs text-gray-500">Seus dados estão seguros e criptografados.</p>
                     </div>

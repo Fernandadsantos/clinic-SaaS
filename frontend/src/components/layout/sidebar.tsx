@@ -15,15 +15,18 @@ export function Sidebar() {
 
     const navigation: NavSideBarProps[] = [
         { title: 'Dashboard', href: '/dashboard', icon: "BarChart", role: "ROLE_USER" },
+        { title: 'Dashboard', href: '/dashboard', icon: "BarChart", role: "ROLE_ADMIN" },
         { title: 'Dashboard Plataforma', href: '/dashboard/plataforma', icon: "BarChart", role: 'ROLE_MASTER' },
         { title: '---', href: '#', icon: null, separator: true, role: 'ROLE_ALL' },
         { title: 'Pacientes', href: '/dashboard/patients', icon: "Users", role: 'ROLE_USER' },
         { title: 'Atendimentos', href: '/dashboard/atendimentos', icon: "Calendar", role: 'ROLE_USER' },
         { title: 'Relatórios', href: '/dashboard/relatorios', icon: "FileText", role: "ROLE_ADMIN" },
+        { title: 'Relatórios', href: '/dashboard/relatorios', icon: "FileText", role: "ROLE_MASTER" },
         { title: 'Usuários', href: '/dashboard/usuarios', icon: "UserCog", role: 'ROLE_ADMIN' },
         { title: '---', href: '#', icon: null, separator: true, role: 'ROLE_ALL' },
-        { title: 'Clínicas', href: '/dashboard/clinicas', icon: "Building", role: 'ROLE_ADMIN' },
-        { title: 'Planos', href: '/dashboard/planos', icon: "CreditCard", role: 'ROLE_ADMIN' },
+        { title: 'Clínicas', href: '/dashboard/clinicas', icon: "Building", role: 'ROLE_MASTER' },
+        { title: 'Planos', href: '/dashboard/planos', icon: "CreditCard", role: 'ROLE_MASTER' },
+        { title: 'Meu plano', href: '/dashboard/meuPlano', icon: "CreditCard", role: 'ROLE_ADMIN' },
     ];
 
     async function handleLogout(e: React.MouseEvent) {
@@ -38,9 +41,6 @@ export function Sidebar() {
 
     return (
         <>
-            {/* 1. OVERLAY (FUNDO ESCURO/TURVO) 
-               Ele está sempre aqui, mas controlamos a opacidade e visibilidade com CSS
-            */}
             <div
                 className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
                     }`}
@@ -49,7 +49,7 @@ export function Sidebar() {
 
             <aside
                 className={`
-                     h-screen bg-white border-r border-gray-200 z-50 flex flex-col
+                    h-screen bg-white border-r border-gray-200 z-50 flex flex-col
                     transition-all duration-300 ease-in-out overflow-hidden
                     ${isOpen ? 'w-80 md:w-64 lg:w-72' : 'w-16'}
                 `}
@@ -60,7 +60,7 @@ export function Sidebar() {
                             className={`text-2xl font-bold text-green-600 whitespace-nowrap transition-opacity duration-200 ${isOpen ? 'opacity-100 delay-100' : 'opacity-0 hidden'
                                 }`}
                         >
-                            ClinicOps
+                            ClinicSaaS
                         </h1>
                         <button
                             className='cursor-pointer text-gray-600 hover:text-green-600 transition-colors'
@@ -83,18 +83,20 @@ export function Sidebar() {
                             }
                             const IconComponent = item.icon ? Icons[item.icon] : null;
 
-                            return (
-                                <Link
-                                    key={item.href}
-                                    to={item.href}
-                                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
-                                >
-                                    <span className="flex-1">{item.title}</span>
-                                    {IconComponent && (
-                                        <IconComponent className="w-5 h-5 text-gray-500" />
-                                    )}
-                                </Link>
-                            )
+                            if (item.role === user?.role) {
+                                return (
+                                    <Link
+                                        key={item.href}
+                                        to={item.href}
+                                        className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+                                    >
+                                        <span className="flex-1">{item.title}</span>
+                                        {IconComponent && (
+                                            <IconComponent className="w-5 h-5 text-gray-500" />
+                                        )}
+                                    </Link>
+                                )
+                            }
                         })}
                     </nav>
                     <div className='pb-3'>
